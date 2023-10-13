@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html>
-<body>
-<div class="portfolio_header">
-    <h1>Anthony Volkov</h1>
-    <img alt="Anthony Volkov photo"></img>
-    <p>
-        Aspiring Full Stack Developer
-        1.5 years of experience in a sysadmin/database admin type role at AVC Technologies.
-    </p>
-    <div class="urls">
-        <a class="linkedIn_url" href="https://www.linkedin.com/in/anthony-volkov/">
-            LinkedIn
-        </a>
-        <br />
-        <a class="linkedIn_url" href="https://www.linkedin.com/in/anthony-volkov/">
-            GitHub
-        </a>
-    </div>
-</div>
+    <head>    
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <title>Anthony Volkov</title>
+    </head>
+    <body>
+        <h1 class="name_title">Anthony Volkov</h1>
+        <div class="portfolio_header">
+            <div class="portfolio_blob">
+                <div class="headshot">
+                    <img alt="Anthony Volkov photo" src="anthony_volkov.png"></img>
+                </div>
+                <div class="portfolio_text">
+                    <p>
+                        Aspiring Full Stack Developer
+                        1.5 years of experience in a technical support role at AVC Technologies.
+                    </p>
+                </div>    
+            </div>
+            <div class="urls">
+                <a class="linkedIn_url" href="https://www.linkedin.com/in/anthony-volkov/">
+                    LinkedIn
+                </a>
+                <br />
+                <a class="linkedIn_url" href="https://www.linkedin.com/in/anthony-volkov/">
+                    GitHub
+                </a>
+            </div>  
+        </div>
+        <div class="container">
+            <div class="portfolio_content">
+                <div class="item">
+                    <p class="item_header">
+                        AVC Technologies - Product Support Engineer
+                        <br />
+                        Liaison to the customer and developer teams.
+                        <br />
+                        My most recent work:
+                    </p>
 
-<div class="portfolio_content">
-    <div class="item">
-        <p class="item_header">
-            AVC Technologies - Product Support Engineer
-            <br />
-            Liaison to the customer and developer teams.
-            <br />
-            My most recent work:
-        </p>
+                    <a class="book_haven_url" alt="Book Haven" href="http://bookhaven.eastus.cloudapp.azure.com/">
+                        Book Haven
+                    </a>
+                    <br />
+                    <a class="book_haven_git" alt="Repository GitHub" href=https://github.com/juandeaglio/BookStore"">
+                        GitHub
+                    </a>
 
-        <a class="book_haven_url" alt="Book Haven" href="http://bookhaven.eastus.cloudapp.azure.com/">
-            Book Haven
-        </a>
-        <br />
-        <a class="book_haven_git" alt="Repository GitHub" href=https://github.com/juandeaglio/BookStore"">
-            GitHub
-        </a>
+                    <p class="item_description">
+                        This is my personal project. I spent about 2-3 months working on it. It is a book store website where you can search and purchase books.
+                        I built it with Django and React and I deploy it to production with an Nginx webserver and Gunicorn appserver in the backend, with React
+                        running in the frontend.
 
-        <p class="item_description">
-            This is my personal project. I spent about 2-3 months working on it. It is a book store website where you can search and purchase books.
-            I built it with Django and React and I deploy it to production with an Nginx webserver and Gunicorn appserver in the backend, with React
-            running in the frontend.
+                        It's been more of a learning experience of how to build a full stack application and create a workflow to deploy it to production with automated
+                        testing. My familiarity with Python made it more comfortable to learn the unique challenges of creating a Django backend, it also 
+                        helped me with quickly picking up the typing system of JavaScript, and in turn, the React framework. The repository is currently public. See for yourself!
+                    </p>
+                </div>
+                <div class="item">
+                    <p>
+                        My most recent work experience:
+                    </p>
+                    <img alt="Kandy Logo"></img>
+                    <p class="item_description">
+                        I worked at AVC Technologies for about 1.5 years.
+                        I was responsible for the health of the database and the application. I was also responsible for the health of the servers that the application ran on.            This was expected of me, but I also did more than that.
+                        I wrote many, many, SQL queries and Shell scripts.
+                        Scripts needed to be maintained, written, and re-written. Ones that frequently monitored the health of our Kubernetes clusters in production.
+                        Monitoring our complex microservice architecture, I explored ways of interpreting RabbitMQ logs and Kubernetes logs to show issues in our system.
+                        And all of those scripts send their results to a MySQL database hosted in Azure. 
+                        I became very familiar with Linux in a distributed system environment.
+                    </p>
+                    <p class="item_description">
+                        I also frequently implemented and used our extensive REST API to correct issues in production.
+                        We frequently used Postman to call Microservice APIs, sometimes to lookup a customer's day, sometimes
+                        to make new changes to their data and fix issues with temporary workarounds.
 
-            It's been more of a learning experience of how to build a full stack application and create a workflow to deploy it to production with automated
-            testing. My familiarity with Python made it more comfortable to learn the unique challenges of creating a Django backend, it also 
-            helped me with quickly picking up the typing system of JavaScript, and in turn, the React framework. The repository is currently public. See for yourself!
-        </p>
-    </div>
-    <div class="item">
-        <p>
-            My most recent work experience:
-        </p>
-        <img alt="Kandy Logo"></img>
-        <p class="item_description">
-            I worked at AVC Technologies for about 1.5 years.
-            I was responsible for the health of the database and the application. I was also responsible for the health of the servers that the application ran on.            This was expected of me, but I also did more than that.
-            I wrote many, many, SQL queries and Shell scripts.
-            Scripts needed to be maintained, written, and re-written. Ones that frequently monitored the health of our Kubernetes clusters in production.
-            Monitoring our complex microservice architecture, I explored ways of interpreting RabbitMQ logs and Kubernetes logs to show issues in our system.
-            And all of those scripts send their results to a MySQL database hosted in Azure. 
-            I became very familiar with Linux in a distributed system environment.
-        </p>
-        <p class="item_description">
-            I also frequently implemented and used our extensive REST API to correct issues in production.
-            We frequently used Postman to call Microservice APIs, sometimes to lookup a customer's day, sometimes
-            to make new changes to their data and fix issues with temporary workarounds.
+                        Overall, I learned a lot of skills and understanding of how a distributed system might get put together and
+                        neat tricks to get the most out of simple tools.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-            Overall, I learned a lot of skills and understanding of how a distributed system might get put together and
-            neat tricks to get the most out of simple tools.
-        </p>
-    </div>
-</div>
-
-</body>
+    </body>
 </html>
