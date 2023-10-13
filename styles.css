@@ -34,13 +34,15 @@ body {
     .headshot{
         max-width: 20%;
     }
+    .portfolio_blob{
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
 }
 
-.portfolio_blob{
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-}
+
 .name_title{
     background-color: #DCAF57;
     padding-top:10px;
@@ -48,6 +50,7 @@ body {
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
+    border-radius: 5%;
 }
 .headshot img{
     width: 100px;
@@ -56,8 +59,9 @@ body {
     margin-left: 0;
 }
 .headshot{
-    min-width: 100px;
+    min-width: 200px;
     width: 20%;
     height: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
