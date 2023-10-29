@@ -1,99 +1,128 @@
 <!DOCTYPE html>
 <html>
     <head>    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <title>Anthony</title>
     </head>
     <body>
         <div class="container">
-            <h1 class="name_title">Anthony Volkov</h1>
-            <div class="portfolio_header">
+            <div class="portfolio_header slide">
+                <div class="portfolio_name">
+                    <h1 class="name_title">Anthony Volkov</h1>
+                </div>
+                <span class="urls">
+                    <a class="url" href="https://github.com/juandeaglio/">
+                        <img class="icon_link" src="github_logo.png" alt="GitHub Icon"/>
+                    </a>
+                    <a class="url" href="https://www.linkedin.com/in/anthony-volkov/">
+                        <img class="icon_link" src="linkedin_logo.png" alt="LinkedIn Icon"/>
+                    </a>
+                </span> 
                 <div class="portfolio_blob">
-                    <div class="headshot">
-                        <img alt="Anthony Volkov photo" src="anthony_volkov.png"></img>
-                    </div>
-                    <div class="portfolio_text">
-                        <p>
-                            Aspiring Developer.
-                            <br />
-                            1.5 years of experience in a technical support role at AVC Technologies.
-                        </p>
-                    </div>    
+                    Fullstack Developer 
+                    <br />
+                    and 
+                    <br />DevOps Engineer.  
                 </div>
+                <div class="arrow"> 
+                    <div onclick="scrollDown()"></div>
+                </div>
+                <script>
+                    function scrollDown(){
+                        window.scrollBy(0, window.innerHeight, behavior='smooth');
+                    }
+
+                    function adjustMargin(){
+                        let portfolio_blob = document.querySelector('.portfolio_blob');
+                        let parentHeight = document.querySelector('.portfolio_header').clientHeight;
+                        let remainingHeight = parentHeight - 488;
+                        if (remainingHeight >= 0){
+                            portfolio_blob.style.marginTop = ((parentHeight - 488 )/ 2) + 'px';
+                        }
+                        else{
+                            portfolio_blob.style.marginTop = '0px';
+                        }
+                    };
+                    adjustMargin();
+
+                    window.addEventListener('resize', adjustMargin);
+                </script>
             </div>
-            <div class="urls">
-                <a class="linkedIn_url" href="https://www.linkedin.com/in/anthony-volkov/">
-                    LinkedIn
-                </a>
-                <a class="github_url" style="padding-left: 10px;" href="https://github.com/juandeaglio/">
-                    GitHub
-                </a>
-            </div>  
+
             <div class="portfolio_content">
-                <div class="item">
+                <div class="slide">
                     <div class="item_header">     
-                        <p style="font-size:32px;">
-                            Book Haven, recent personal project:
+                        <p>
+                            Book Haven
+                            <br />
+                            July - Present
                         </p>
                     </div>
-                    <div class="urls">
-                        <a class="book_haven_url" alt="Book Haven" href="http://bookhaven.eastus.cloudapp.azure.com/">
-                            Book Haven
+                    <span class="urls portfolio_content">
+                        <a class="url" href="http://bookhaven.eastus.cloudapp.azure.com/">
+                            <img class="icon_link" src="bookhaven_logo.png" alt="BookHaven Icon"/>
                         </a>
-                    </div>
-                    <div>
-                        <a class="book_haven_git" alt="Repository GitHub" href=https://github.com/juandeaglio/BookStore"">
-                            GitHub
+                        <a class="url" href="https://github.com/juandeaglio/BookStore">
+                            <img class="icon_link" src="github_logo.png" alt="BookHaven Github Repo"/>
                         </a>
+                    </span>                    
+                    <p class="item_description">
+                        Book Haven is my fullstack book selling website.
+                        <br />
+                        Rapidly built with and using scalable components such as:
+                    </p>
+                    <div class="tech_stack">
+                        <img class="icon" src="react_logo.png" alt="React Icon"/>
+                        <img class="icon" src="django_logo.png" alt="Django Icon"/>
+                        <img class="icon" src="python_logo.png" alt="Python Icon"/>
+                        <img class="icon" src="azure_logo.png" alt="Azure Icon"/>
+                        <img class="icon" src="nginx_logo.png" alt="Nginx Icon"/>
                     </div>
-                    <p class="item_description">
-                        Book Haven is my personal project. I spent since July 2023 working on it and learning Django 
-                        and React. It is a book store website where you can search and purchase books.
-                        I deploy it to production with an Nginx webserver and Gunicorn appserver in the backend,
-                        with React running in the frontend.
+                    <p class="item_detailed_description">
+                        Designed with a CI/CD methodology and Test-Driven Development.
                     </p>
-                    <p class="item_description">
-                        It's been more of a learning experience of how to build a full stack application and create a 
-                        workflow to deploy it to production with automated testing. My familiarity with Python made 
-                        it more comfortable to learn the unique challenges of creating a Django backend, it also 
-                        helped me with quickly picking up the typing system of JavaScript, and in turn, the React 
-                        framework. The repository is currently public. See for yourself!
-                    </p>
+                    <img class="item_image" src="behave_report.png" alt="Behave Report"/>
+
                 </div>
-                <div class="item">
+                <div class="slide">
                     <div class="item_header">     
-                        <p style="font-size: 32px; margin-bottom: 0px;">
-                            AVC Technologies - Product Support Engineer
+                        <p style="margin-bottom: 0px;">
+                            AVC Technologies - DevOps Engineer
+                            <br />
+                            2021 - Present
                         </p>
                         <img alt="Kandy Logo" src="Kandy.png"></img>
 
                     </div>
                     <p style="margin-top: 0px;">
-                        Liaison to the customer and developer teams.
+                        Automating manually intensive tasks.
                         <br />
-                        My most recent work:
+                        Monitoring and creating dashboards on the health of the cloud infrastructure.
+                        <br />
+                        Hosted and maintained an API marketplace portal for AT&T.
                     </p>
-                    <p class="item_description">
-                        I worked at AVC Technologies for about 1.5 years.
-                        I was responsible for the health of the database and the application. I was also responsible for the health of the servers that the application ran on.            This was expected of me, but I also did more than that.
-                        I wrote many, many, SQL queries and Shell scripts.
-                        Scripts needed to be maintained, written, and re-written. Ones that frequently monitored the health of our Kubernetes clusters in production.
-                        Monitoring our complex microservice architecture, I explored ways of interpreting RabbitMQ logs and Kubernetes logs to show issues in our system.
-                        And all of those scripts send their results to a MySQL database hosted in Azure. 
-                        I became very familiar with Linux in a distributed system environment.
-                    </p>
-                    <p class="item_description">
-                        I also frequently implemented and used our extensive REST API to correct issues in production.
-                        We frequently used Postman to call Microservice APIs, sometimes to lookup a customer's day, sometimes
-                        to make new changes to their data and fix issues with temporary workarounds.
-
-                        Overall, I learned a lot of skills and understanding of how a distributed system might get put together and
-                        neat tricks to get the most out of simple tools.
-                    </p>
+                    <a href="https://apimarket.att.com/">
+                        APIMarketPlace
+                    </a>
+                    <div class="tech_stack">
+                        <img class="icon" src="react_logo.png" alt="React Icon"/>
+                        <img class="icon" src="python_logo.png" alt="Python Icon"/>
+                        <img class="icon" src="azure_logo.png" alt="Azure Icon"/>
+                        <img class="icon" src="nginx_logo.png" alt="Nginx Icon"/>
+                        <img class="icon" src="ElasticSearch.png" alt="ElasticSearch Icon"/>
+                        <img class="icon" src="Kibana.png" alt="Kibana Icon"/>
+                        <img class="icon" src="Logstash.png" alt="Logstash Icon"/>
+                        <img class="icon" src="GraphQl.png" alt="GraphQl Icon"/>
+                        <img class="icon" src="Docker.png" alt="Docker Icon"/>
+                        <img class="icon" src="Kubernetes.png" alt="Kubernetes Icon"/>
+                        <img class="icon" src="Bash.png" alt="Bash Icon"/>
+                    </div>
                 </div>
             </div>
         </div>
 
+        </div>
     </body>
 </html>

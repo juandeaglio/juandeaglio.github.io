@@ -1,84 +1,140 @@
+html {
+    margin: 0;
+}
 body {
     font-family: 'Montserrat';
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 1.5;
     color: #212529;
+    margin: 0;
 }
 
-.container {
+a { text-decoration: none}
+
+.portfolio_header{
+    flex: 1;
+    text-align: center;
+    color: #212529;
+    background-color: #00ABE4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.portfolio_name
+{
+    font-weight: 1200;
+    color: #212529;
+    justify-content: center;
+}
+.name_title{
+    margin: 0;
+    margin-top: 10px;
+}
+.urls{
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+}
+.url{
+    background-color: #E9F1FA;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+}
+.icon_link
+{
+    text-decoration: none;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
- 
-@media (pointer:coarse) {
-    /* custom css for "touch targets" */
-
-    .portfolio_header{
-        text-align: center;
-        font-weight: 700;
-        color: #212529;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        color: #000;
-        border-radius: 10px;
-    }
-    .name_title{
-        background-color: #DCAF57;
-        padding-top:10px;
-        padding-bottom:10px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        text-align: center;
-        border-radius: 5%;
-    }
-    .headshot img{
-        max-width: 150px;
-        height: auto;
-        border-radius: 50%;
-    }
-    .headshot{
-        width: 100%;
-        height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .item_header img{
-        width: 250px;    
-        height: auto;
-    }
-}
-
-.container {
-    max-width: 1280px;
+    height: 100%;
+    object-fit: contain;
 }
 .portfolio_blob{
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-}
-.headshot {
-    height: auto;
-    margin-left: 0;
-    max-width: 250px;
-}
-.headshot img{
-    height: auto;
-    min-width: 250px;
-}
-.portfolio_text{
-    width: 100%;
-    height: auto;
-    text-align: left;
-    padding-left: 20px;
-}
-.item_header{
-    display: flex;
-    flex-direction: row;
+    flex: 1;
+    height:100%;
+    font-weight: 1200;
+    color: #212529;
     justify-content: center;
-    padding-top:50px;
+    font-size: 24px;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-135deg);}
+    50% { transform: translateY(-20px) rotate(-135deg);}
+}
+
+.arrow {
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.arrow div {
+    height: 20px;
+    width: 20px;
+    border-top: 8px solid #FFF;
+    border-left: 8px solid #FFF;
+    animation: bounce 1s infinite;
+    cursor: pointer;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.slide
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-conter: center;
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    margin: 0;
+    
+    background-color: #E9F1FA;
+}
+
+.item_header img{
+    width: 250px;    
+    height: auto;
+}
+
+.portfolio_content
+{
+    text-align: start;
+    justify-content: start;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+p {
+    margin: 0;
+}
+.item_header
+{
+    font-size: 24px;
+}
+
+// desktop pointer media
+@media (min-width: 500px) {
+    body {
+        font-size: 12px;
+        width: 100%;
+        height: 100%;
+    }
+    .portfolio_blob
+    {
+        font-size: 12px;
+    }
 }
