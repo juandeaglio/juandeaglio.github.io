@@ -103,6 +103,8 @@ a { text-decoration: none}
     justify-content: center;
     align-items: flex-end;
     height: 100px;  /* Adjust as needed */
+    margin-bottom: 50px;
+    z-index: 1;
 }
 
 .arrow {
