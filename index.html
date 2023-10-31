@@ -8,35 +8,43 @@
     </head>
     <body>
         <div class="container">
-            <div class="portfolio_header slide">
-                <div class="portfolio_name">
-                    <h1 class="name_title">Anthony Volkov</h1>
+            <div class="portfolio-header slide">
+                <div class="portfolio-name">
+                    <h1 class="name-title">Anthony Volkov</h1>
                 </div>
                 <span class="urls">
                     <a class="url" href="https://github.com/juandeaglio/">
-                        <img class="icon_link" src="github_logo.png" alt="GitHub Icon"/>
+                        <img class="icon-link" src="github-logo.png" alt="GitHub Icon"/>
                     </a>
                     <a class="url" href="https://www.linkedin.com/in/anthony-volkov/">
-                        <img class="icon_link" src="linkedin_logo.png" alt="LinkedIn Icon"/>
+                        <img class="icon-link" src="linkedin-logo.png" alt="LinkedIn Icon"/>
                     </a>
                 </span> 
-                <div class="portfolio_blob">
+                <div class="portfolio-blob">
                     Fullstack Developer 
                     <br />
                     and 
                     <br />DevOps Engineer.  
                 </div>
-                <div class="arrow"> 
-                    <div onclick="scrollDown()"></div>
+                <div class="scroll-button">
+                    <div class="arrow">
+                        <div ></div>
+                    </div>
                 </div>
                 <script>
-                    function scrollDown(){
-                        window.scrollBy(0, window.innerHeight, behavior='smooth');
-                    }
-
+                    document.querySelector('.scroll-button').addEventListener('click', function() {
+                        let container = document.querySelector('.container');
+                        let portfolioContent = document.querySelector('.portfolio-content');
+                        let offsetTop = portfolioContent.offsetTop - container.offsetTop;
+                        container.scroll({
+                            top: offsetTop,
+                            left: 0,
+                            behavior: 'smooth'
+                        });
+                    });
                     function adjustMargin(){
-                        let portfolio_blob = document.querySelector('.portfolio_blob');
-                        let parentHeight = document.querySelector('.portfolio_header').clientHeight;
+                        let portfolio_blob = document.querySelector('.portfolio-blob');
+                        let parentHeight = document.querySelector('.portfolio-header').clientHeight;
                         let remainingHeight = parentHeight - 488;
                         if (remainingHeight >= 0){
                             portfolio_blob.style.marginTop = ((parentHeight - 488 )/ 2) + 'px';
@@ -51,43 +59,72 @@
                 </script>
             </div>
 
-            <div class="portfolio_content">
+            <div class="portfolio-content">
                 <div class="slide">
-                    <div class="item_header">     
-                        <p>
-                            Book Haven
-                            <br />
-                            July - Present
-                        </p>
+                    <div class="item-header" id="book-haven">     
+                        Book Haven
                     </div>
-                    <span class="urls portfolio_content">
+                    <span class="urls portfolio-content">
                         <a class="url" href="http://bookhaven.eastus.cloudapp.azure.com/">
-                            <img class="icon_link" src="bookhaven_logo.png" alt="BookHaven Icon"/>
+                            <img class="icon-link" src="bookhaven-logo.png" alt="BookHaven Icon"/>
                         </a>
                         <a class="url" href="https://github.com/juandeaglio/BookStore">
-                            <img class="icon_link" src="github_logo.png" alt="BookHaven Github Repo"/>
+                            <img class="icon-link" src="github-logo.png" alt="BookHaven Github Repo"/>
                         </a>
                     </span>                    
-                    <p class="item_description">
-                        Book Haven is my fullstack book selling website.
+                    <span class="item-description">
+                        <a href="http://bookhaven.eastus.cloudapp.azure.com/">
+                            Book Haven
+                        </a>
+                         is my fullstack book selling website.
                         <br />
                         Rapidly built with and using scalable components such as:
-                    </p>
-                    <div class="tech_stack">
-                        <img class="icon" src="react_logo.png" alt="React Icon"/>
-                        <img class="icon" src="django_logo.png" alt="Django Icon"/>
-                        <img class="icon" src="python_logo.png" alt="Python Icon"/>
-                        <img class="icon" src="azure_logo.png" alt="Azure Icon"/>
-                        <img class="icon" src="nginx_logo.png" alt="Nginx Icon"/>
+                    </span>
+                    <div class="tech-stack">
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="react-logo.png" alt="React Icon"/>
+                            <span>React.js</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="django-logo.png" alt="Django Icon"/>
+                            <span>Django</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="python-logo.png" alt="Python Icon"/>
+                            <span>Python</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="azure-logo.png" alt="Azure Icon"/>
+                            <span>Azure</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="nginx-logo.png" alt="Nginx Icon"/>
+                            <span>Nginx</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="behave-logo.png" alt="Behave Icon"/>
+                            <span>Behave</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="css-logo.png" alt="CSS Icon"/>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="html-logo.png" alt="HTML Icon"/>
+                        </div>
                     </div>
-                    <p class="item_detailed_description">
+                    <p class="item-detailed-description">
                         Designed with a CI/CD methodology and Test-Driven Development.
                     </p>
-                    <img class="item_image" src="behave_report.png" alt="Behave Report"/>
+                    <span>
+                        <a href="complete.html">
+                            Here  
+                        </a>
+                        is a complete report on the full functionality of the backend API.
+                    </span>
 
                 </div>
                 <div class="slide">
-                    <div class="item_header">     
+                    <div class="item-header">     
                         <p style="margin-bottom: 0px;">
                             AVC Technologies - DevOps Engineer
                             <br />
@@ -106,18 +143,43 @@
                     <a href="https://apimarket.att.com/">
                         APIMarketPlace
                     </a>
-                    <div class="tech_stack">
-                        <img class="icon" src="react_logo.png" alt="React Icon"/>
-                        <img class="icon" src="python_logo.png" alt="Python Icon"/>
-                        <img class="icon" src="azure_logo.png" alt="Azure Icon"/>
-                        <img class="icon" src="nginx_logo.png" alt="Nginx Icon"/>
-                        <img class="icon" src="ElasticSearch.png" alt="ElasticSearch Icon"/>
-                        <img class="icon" src="Kibana.png" alt="Kibana Icon"/>
-                        <img class="icon" src="Logstash.png" alt="Logstash Icon"/>
-                        <img class="icon" src="GraphQl.png" alt="GraphQl Icon"/>
-                        <img class="icon" src="Docker.png" alt="Docker Icon"/>
-                        <img class="icon" src="Kubernetes.png" alt="Kubernetes Icon"/>
-                        <img class="icon" src="Bash.png" alt="Bash Icon"/>
+                    <div class="tech-stack">
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="react-logo.png" alt="React Icon"/>
+                            <span>React.js</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="python-logo.png" alt="Python Icon"/>
+                            <span>Python</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="azure-logo.png" alt="Azure Icon"/>
+                            <span>Azure</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="nginx-logo.png" alt="Nginx Icon"/>
+                            <span>Nginx</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="elasticsearch-logo.png" alt="ElasticSearch Icon"/>
+                            <span>ElasticSearch</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="kibana-logo.png" alt="Kibana Icon"/>
+                            <span>Kibana</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="docker-logo.png" alt="Docker Icon"/>
+                            <span>Docker</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="kubernetes-logo.png" alt="Kubernetes Icon"/>
+                            <span>Kubernetes</span]>
+                        </div>
+                        <div class="icon-text-wrapper">
+                            <img class="icon" src="bash-logo.png" alt="Bash Icon"/>
+                            <span>Bash</span]>
+                        </div>
                     </div>
                 </div>
             </div>
