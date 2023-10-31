@@ -9,20 +9,38 @@ body {
     color: #212529;
     margin: 0;
 }
+.wf-loading * {
+    animation-play-state: paused !important;
+    animation: none !important;
+    transition: none !important;
+}
 
 a { text-decoration: none}
 
-.portfolio-header{
-    flex: 1;
-    text-align: center;
-    color: #212529;
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.background-shapes {
+    fill-opacity: 0.0;
+}
+.transparent-shape {
+    animation: move 30s linear infinite;
+}
+
+.portfolio-header {
+    position: relative;  /* This will keep the SVG within the portfolio-header div */
     background-color: #00ABE4;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    color: #212529;
 }
+
 .portfolio-name
 {
+    opacity: 0;
     font-weight: 1200;
     color: #212529;
     justify-content: center;
@@ -32,6 +50,7 @@ a { text-decoration: none}
     margin-top: 10px;
 }
 .urls{
+    opacity: 0;
     text-align: center;
     width: auto;
     height: auto;
@@ -52,6 +71,7 @@ a { text-decoration: none}
     object-fit: contain;
 }
 .portfolio-blob{
+    opacity: 0;
     flex: 1;
     height:100%;
     font-weight: 1200;
@@ -59,34 +79,22 @@ a { text-decoration: none}
     justify-content: center;
     font-size: 24px;
 }
+
 @keyframes bounce {
-    0%, 100% { transform: translateY(0) rotate(-135deg);}
-    50% { transform: translateY(-20px) rotate(-135deg);}
+    0%, 100% { transform: translateY(0);opacity: 1; }
+    50% { transform: translateY(-20px);opacity: 1; }
+}
+
+.scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100px;  /* Adjust as needed */
 }
 
 .arrow {
-    height: 20px;
-    width: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-}
-
-.arrow div {
-    height: 20px;
-    width: 20px;
-    border-top: 8px solid #FFF;
-    border-left: 8px solid #FFF;
+    opacity: 0;
     animation: bounce 1s infinite;
-    cursor: pointer;
-}
-.scroll-button
-{
-    width: 100%;
-}
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
 }
 
 .slide
@@ -130,7 +138,7 @@ p {
     font-weight: 1200;
 }
 
-.item-description a
+.project-link
 {
     text-decoration: underline;
 }
@@ -153,6 +161,42 @@ p {
     object-fit: contain;
     height: 50px;
     width: auto;
+}
+
+.slide-in-fade-in{
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+.slide-in-fade-in2{
+    animation: fade-in 0.5s ease-out 0.5s forwards;
+}
+
+.slide-in-fade-in3{
+    animation: fade-in 0.5s ease-out 1s forwards;
+}
+@keyframes slide-in-fade-in {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move{
+    0% { transform: translate(0, 0); fill-opacity: 0.2 }
+    50% { transform: translate(100px, 100px); fill-opacity: 0.2}
+    100% { transform: translate(0, 0); ill-opacity: 0.2 }
 }
 
 // desktop pointer media

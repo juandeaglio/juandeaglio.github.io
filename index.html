@@ -3,16 +3,36 @@
     <head>    
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <title>Anthony</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Montserrat']
+                },
+                active: function() {
+                    document.body.classList.remove('wf-loading');
+                }
+            });
+        </script>
     </head>
-    <body>
+    
+    <body class="wf-loading">
         <div class="container">
             <div class="portfolio-header slide">
-                <div class="portfolio-name">
+                <div>
+                    <svg class="background" width="100%" height="100%">
+                        <g class="background-shapes">
+                            <rect class="transparent-shape" x="10" y="30" width="100" height="100" fill="#E9F1FA" />
+                            <rect class="transparent-shape" x="200" y="150" width="150" height="150" fill="#E9F1FA" />
+                            <rect class="transparent-shape" x="400" y="400" width="80" height="80" fill="#E9F1FA" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="portfolio-name slide-in-fade-in">
                     <h1 class="name-title">Anthony Volkov</h1>
                 </div>
-                <span class="urls">
+                <span class="urls slide-in-fade-in2">
                     <a class="url" href="https://github.com/juandeaglio/">
                         <img class="icon-link" src="github-logo.png" alt="GitHub Icon"/>
                     </a>
@@ -20,43 +40,19 @@
                         <img class="icon-link" src="linkedin-logo.png" alt="LinkedIn Icon"/>
                     </a>
                 </span> 
-                <div class="portfolio-blob">
+                <div class="portfolio-blob slide-in-fade-in3">
                     Fullstack Developer 
                     <br />
                     and 
                     <br />DevOps Engineer.  
                 </div>
                 <div class="scroll-button">
-                    <div class="arrow">
-                        <div ></div>
-                    </div>
+                    <svg width="40" height="40">
+                        <g class="arrow" transform="rotate(45, 20, 20)">
+                            <polygon points="20,30 5,20 35,20" fill="#E9F1FA"/>
+                        </g>
+                    </svg>
                 </div>
-                <script>
-                    document.querySelector('.scroll-button').addEventListener('click', function() {
-                        let container = document.querySelector('.container');
-                        let portfolioContent = document.querySelector('.portfolio-content');
-                        let offsetTop = portfolioContent.offsetTop - container.offsetTop;
-                        container.scroll({
-                            top: offsetTop,
-                            left: 0,
-                            behavior: 'smooth'
-                        });
-                    });
-                    function adjustMargin(){
-                        let portfolio_blob = document.querySelector('.portfolio-blob');
-                        let parentHeight = document.querySelector('.portfolio-header').clientHeight;
-                        let remainingHeight = parentHeight - 488;
-                        if (remainingHeight >= 0){
-                            portfolio_blob.style.marginTop = ((parentHeight - 488 )/ 2) + 'px';
-                        }
-                        else{
-                            portfolio_blob.style.marginTop = '0px';
-                        }
-                    };
-                    adjustMargin();
-
-                    window.addEventListener('resize', adjustMargin);
-                </script>
             </div>
 
             <div class="portfolio-content">
@@ -73,7 +69,7 @@
                         </a>
                     </span>                    
                     <span class="item-description">
-                        <a href="http://bookhaven.eastus.cloudapp.azure.com/">
+                        <a class="project-link" href="http://bookhaven.eastus.cloudapp.azure.com/">
                             Book Haven
                         </a>
                          is my fullstack book selling website.
@@ -83,27 +79,27 @@
                     <div class="tech-stack">
                         <div class="icon-text-wrapper">
                             <img class="icon" src="react-logo.png" alt="React Icon"/>
-                            <span>React.js</span]>
+                            <span>React.js</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="django-logo.png" alt="Django Icon"/>
-                            <span>Django</span]>
+                            <span>Django</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="python-logo.png" alt="Python Icon"/>
-                            <span>Python</span]>
+                            <span>Python</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="azure-logo.png" alt="Azure Icon"/>
-                            <span>Azure</span]>
+                            <span>Azure</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="nginx-logo.png" alt="Nginx Icon"/>
-                            <span>Nginx</span]>
+                            <span>Nginx</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="behave-logo.png" alt="Behave Icon"/>
-                            <span>Behave</span]>
+                            <span>Behave</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="css-logo.png" alt="CSS Icon"/>
@@ -116,7 +112,7 @@
                         Designed with a CI/CD methodology and Test-Driven Development.
                     </p>
                     <span>
-                        <a href="complete.html">
+                        <a class="project-link" href="complete.html">
                             Here  
                         </a>
                         is a complete report on the full functionality of the backend API.
@@ -146,39 +142,39 @@
                     <div class="tech-stack">
                         <div class="icon-text-wrapper">
                             <img class="icon" src="react-logo.png" alt="React Icon"/>
-                            <span>React.js</span]>
+                            <span>React.js</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="python-logo.png" alt="Python Icon"/>
-                            <span>Python</span]>
+                            <span>Python</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="azure-logo.png" alt="Azure Icon"/>
-                            <span>Azure</span]>
+                            <span>Azure</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="nginx-logo.png" alt="Nginx Icon"/>
-                            <span>Nginx</span]>
+                            <span>Nginx</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="elasticsearch-logo.png" alt="ElasticSearch Icon"/>
-                            <span>ElasticSearch</span]>
+                            <span>ElasticSearch</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="kibana-logo.png" alt="Kibana Icon"/>
-                            <span>Kibana</span]>
+                            <span>Kibana</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="docker-logo.png" alt="Docker Icon"/>
-                            <span>Docker</span]>
+                            <span>Docker</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="kubernetes-logo.png" alt="Kubernetes Icon"/>
-                            <span>Kubernetes</span]>
+                            <span>Kubernetes</span>
                         </div>
                         <div class="icon-text-wrapper">
                             <img class="icon" src="bash-logo.png" alt="Bash Icon"/>
-                            <span>Bash</span]>
+                            <span>Bash</span>
                         </div>
                     </div>
                 </div>
@@ -186,5 +182,33 @@
         </div>
 
         </div>
+        <script>
+            document.querySelector('.scroll-button').addEventListener('click', function() {
+                let container = document.querySelector('.container');
+                let portfolioContent = document.querySelector('.portfolio-content');
+                let scroll_button = document.querySelector('.scroll-button');
+                scroll_button.style.opacity = 0;
+                let offsetTop = portfolioContent.offsetTop - container.offsetTop;
+                container.scroll({
+                    top: offsetTop,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            });
+            function adjustMargin(){
+                let portfolio_blob = document.querySelector('.portfolio-blob');
+                let parentHeight = document.querySelector('.portfolio-header').clientHeight;
+                let remainingHeight = parentHeight - 488;
+                if (remainingHeight >= 0){
+                    portfolio_blob.style.marginTop = ((parentHeight - 488 )/ 2) + 'px';
+                }
+                else{
+                    portfolio_blob.style.marginTop = '0px';
+                }
+            };
+            adjustMargin();
+    
+            window.addEventListener('resize', adjustMargin);
+        </script>
     </body>
 </html>
