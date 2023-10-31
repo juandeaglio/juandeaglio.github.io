@@ -21,18 +21,30 @@
         <div class="container">
             <div class="portfolio-header slide">
                 <div>
-                    <svg class="background" width="100%" height="100%">
+                    <svg class="background" width="100%" height="100%" viewBox="0 0 2000 2000">
                         <g  class="background-shapes">
-                            <rect class="transparent-shape" data-initial-x="-130" data-initial-y="30" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA" />
+                            <rect class="transparent-shape" data-initial-x="-230" data-initial-y="30" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA" />
                         </g>
                         <g  class="background-shapes">
-                            <rect class="transparent-shape" data-initial-x="70" data-initial-y="-150" data-initial-width="150" data-initial-height="150" width="150" height="150" fill="#E9F1FA" />
+                            <rect class="transparent-shape" data-initial-x="170" data-initial-y="-450" data-initial-width="150" data-initial-height="150" width="150" height="150" fill="#E9F1FA" />
                         </g>
                         <g  class="background-shapes">
-                            <rect class="transparent-shape" data-initial-x="10" data-initial-y="-200" data-initial-width="80" data-initial-height="80" width="80" height="80" fill="#E9F1FA" />                        
+                            <rect class="transparent-shape" data-initial-x="110" data-initial-y="-200" data-initial-width="80" data-initial-height="80" width="80" height="80" fill="#E9F1FA" />                        
                         </g>
                         <g  class="background-shapes">
-                            <rect class="transparent-shape" data-initial-x="150" data-initial-y="130" data-initial-width="120" data-initial-height="60" width="120" height="60" fill="#E9F1FA"/>                        
+                            <rect class="transparent-shape" data-initial-x="850" data-initial-y="630" data-initial-width="120" data-initial-height="60" width="120" height="60" fill="#E9F1FA"/>                        
+                        </g>
+                        <g class ="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="-300" data-initial-y="-600" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA"/>
+                        </g>
+                        <g class ="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="600" data-initial-y="-100" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA"/>
+                        </g>
+                        <g class ="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="1200" data-initial-y="400" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA"/>
+                        </g>
+                        <g class ="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="-200" data-initial-y="100" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA"/>
                         </g>
                     </svg>
                 </div>
@@ -122,7 +134,7 @@
                         <a class="project-link" href="complete.html">
                             Here  
                         </a>
-                        is a complete report on the full functionality of the backend API.
+                        is a complete report on the full functionality of the backend API. (Works best on desktop)
                     </span>
 
                 </div>
@@ -191,32 +203,28 @@
                 const header = document.querySelector('.portfolio-header');
                 const rectElements = document.querySelectorAll('.transparent-shape');
                 const headerRect = header.getBoundingClientRect();
-                const centerX = headerRect.left + headerRect.width / 2;
-                const centerY = headerRect.top + headerRect.height / 2;
-                const scalingFactor = Math.sqrt(header.offsetWidth * header.offsetHeight) / 500;  // Adjust 1000 based on your requirement
+                const centerX = window.innerWidth/ 2;
+                const centerY = window.innerHeight / 2;
+                const scalingFactor = Math.sqrt(header.offsetWidth * header.offsetHeight) / 250;
 
                 rectElements.forEach(rect => {
                     const initialWidth = parseFloat(rect.getAttribute('data-initial-width'));
                     const initialHeight = parseFloat(rect.getAttribute('data-initial-height'));
-                    const rectWidth = parseFloat(rect.getAttribute('width'));
-                    const rectHeight = parseFloat(rect.getAttribute('height'));
                     const initialX = parseFloat(rect.getAttribute('data-initial-x'));
                     const initialY = parseFloat(rect.getAttribute('data-initial-y'));
-                    
-                    // Calculating the new position by adding the initial offset to the center position
-                    const newX = centerX - rectWidth / 2 + initialX - headerRect.left;
-                    const newY = centerY - rectHeight / 2 + initialY - headerRect.top;
+
+                    // No need to adjust for headerRect.left and headerRect.top in the newX and newY calculations
+                    const newX = centerX - initialWidth / 2 + initialX;
+                    const newY = centerY - initialHeight / 2 + initialY;
                     const newWidth = initialWidth * scalingFactor;
                     const newHeight = initialHeight * scalingFactor;
-                    
+
                     rect.setAttribute('x', newX);
                     rect.setAttribute('y', newY);
-                    
                     rect.setAttribute('width', newWidth);
                     rect.setAttribute('height', newHeight);
                 });
             }
-
             // Call the function initially to set the positions
             centerRectangles();
 
@@ -239,7 +247,7 @@
             randomizeShapes();
 
             // Set up a 30-second interval to randomize the classes
-            setInterval(randomizeShapes, 30000);
+            setInterval(randomizeShapes, 60000);
 
             function rotateGroupElements() {
                 const groupElements = document.querySelectorAll('g.background-shapes');  // Select all <g> elements within .background-shapes

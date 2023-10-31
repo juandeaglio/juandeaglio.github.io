@@ -28,19 +28,19 @@ a { text-decoration: none}
     fill-opacity: 0.0;
 }
 .transparent-shape1 {
-    animation: move1 30s linear infinite;
+    animation: move1 60s linear infinite;
 }
 
 .transparent-shape2 {
-    animation: move2 30s linear infinite;
+    animation: move2 60s linear infinite;
 }
 
 .transparent-shape3 {
-    animation: move3 30s linear infinite;
+    animation: move3 60s linear infinite;
 }
 
 .transparent-shape4 {
-    animation: move4 30s linear infinite;
+    animation: move4 60s linear infinite;
 }
 
 
@@ -208,25 +208,25 @@ p {
 
 @keyframes move1 {
     0% { transform: translate(0, 0); fill-opacity: 0.2 }
-    50% { transform: translate(100px, 100px); fill-opacity: 0.2}
+    50% { transform: translate(400px, 400px); fill-opacity: 0.2}
     100% { transform: translate(0, 0); fill-opacity: 0.2 }
 }
 
 @keyframes move2 {
     0% { transform: translate(0, 0); fill-opacity: 0.2 }
-    50% { transform: translate(-100px, 100px); fill-opacity: 0.2}
+    50% { transform: translate(-400px, 400px); fill-opacity: 0.2}
     100% { transform: translate(0, 0); fill-opacity: 0.2 }
 }
 
 @keyframes move3 {
     0% { transform: translate(0, 0); fill-opacity: 0.2 }
-    50% { transform: translate(100px, -100px); fill-opacity: 0.2}
+    50% { transform: translate(400px, -400px); fill-opacity: 0.2}
     100% { transform: translate(0, 0); fill-opacity: 0.2 }
 }
 
 @keyframes move4 {
     0% { transform: translate(0, 0); fill-opacity: 0.2 }
-    50% { transform: translate(-100px, -100px); fill-opacity: 0.2}
+    50% { transform: translate(-400px, -400px); fill-opacity: 0.2}
     100% { transform: translate(0, 0); fill-opacity: 0.2 }
 }
 
