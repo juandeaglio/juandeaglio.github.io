@@ -22,10 +22,17 @@
             <div class="portfolio-header slide">
                 <div>
                     <svg class="background" width="100%" height="100%">
-                        <g class="background-shapes">
-                            <rect class="transparent-shape" x="10" y="30" width="100" height="100" fill="#E9F1FA" />
-                            <rect class="transparent-shape" x="200" y="150" width="150" height="150" fill="#E9F1FA" />
-                            <rect class="transparent-shape" x="400" y="400" width="80" height="80" fill="#E9F1FA" />
+                        <g  class="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="-130" data-initial-y="30" data-initial-width="100" data-initial-height="100" width="100" height="100" fill="#E9F1FA" />
+                        </g>
+                        <g  class="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="70" data-initial-y="-150" data-initial-width="150" data-initial-height="150" width="150" height="150" fill="#E9F1FA" />
+                        </g>
+                        <g  class="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="10" data-initial-y="-200" data-initial-width="80" data-initial-height="80" width="80" height="80" fill="#E9F1FA" />                        
+                        </g>
+                        <g  class="background-shapes">
+                            <rect class="transparent-shape" data-initial-x="150" data-initial-y="130" data-initial-width="120" data-initial-height="60" width="120" height="60" fill="#E9F1FA"/>                        
                         </g>
                     </svg>
                 </div>
@@ -48,7 +55,7 @@
                 </div>
                 <div class="scroll-button">
                     <svg width="40" height="40">
-                        <g class="arrow" transform="rotate(45, 20, 20)">
+                        <g class="arrow" transform="rotate(0, 20, 20)">
                             <polygon points="20,30 5,20 35,20" fill="#E9F1FA"/>
                         </g>
                     </svg>
@@ -179,10 +186,85 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        </div>
         <script>
+            function centerRectangles() {
+                const header = document.querySelector('.portfolio-header');
+                const rectElements = document.querySelectorAll('.transparent-shape');
+                const headerRect = header.getBoundingClientRect();
+                const centerX = headerRect.left + headerRect.width / 2;
+                const centerY = headerRect.top + headerRect.height / 2;
+                const scalingFactor = Math.sqrt(header.offsetWidth * header.offsetHeight) / 500;  // Adjust 1000 based on your requirement
+
+                rectElements.forEach(rect => {
+                    const initialWidth = parseFloat(rect.getAttribute('data-initial-width'));
+                    const initialHeight = parseFloat(rect.getAttribute('data-initial-height'));
+                    const rectWidth = parseFloat(rect.getAttribute('width'));
+                    const rectHeight = parseFloat(rect.getAttribute('height'));
+                    const initialX = parseFloat(rect.getAttribute('data-initial-x'));
+                    const initialY = parseFloat(rect.getAttribute('data-initial-y'));
+                    
+                    // Calculating the new position by adding the initial offset to the center position
+                    const newX = centerX - rectWidth / 2 + initialX - headerRect.left;
+                    const newY = centerY - rectHeight / 2 + initialY - headerRect.top;
+                    const newWidth = initialWidth * scalingFactor;
+                    const newHeight = initialHeight * scalingFactor;
+                    
+                    rect.setAttribute('x', newX);
+                    rect.setAttribute('y', newY);
+                    
+                    rect.setAttribute('width', newWidth);
+                    rect.setAttribute('height', newHeight);
+                });
+            }
+
+            // Call the function initially to set the positions
+            centerRectangles();
+
+            // Update positions whenever the window is resized
+            window.addEventListener('resize', centerRectangles);
+
+
+            function randomizeShapes() {
+                const rects = document.querySelectorAll('.background-shapes rect');
+                rects.forEach(rect => {
+                    const randomNum = Math.floor(Math.random() * 4) + 1;
+                    // Remove any existing transparent-shape class
+                    rect.classList.remove('transparent-shape1', 'transparent-shape2', 'transparent-shape3', 'transparent-shape4');
+                    // Add a new random transparent-shape class
+                    rect.classList.add('transparent-shape' + randomNum);
+                });
+            }
+
+            // Call randomizeShapes initially to set the first random classes
+            randomizeShapes();
+
+            // Set up a 30-second interval to randomize the classes
+            setInterval(randomizeShapes, 30000);
+
+            function rotateGroupElements() {
+                const groupElements = document.querySelectorAll('g.background-shapes');  // Select all <g> elements within .background-shapes
+
+                groupElements.forEach(group => {
+                    const rect = group.querySelector('rect');  // Select the rect within the current <g> element
+
+                    if (rect) {  // Ensure a rect exists within the group
+                        // Get the dimensions and position of the rect for calculating the center for rotation
+                        const width = parseFloat(rect.getAttribute('width'));
+                        const height = parseFloat(rect.getAttribute('height'));
+                        const x = parseFloat(rect.getAttribute('x'));
+                        const y = parseFloat(rect.getAttribute('y'));
+                        const cx = x + width / 2;
+                        const cy = y + height / 2;
+
+                        // Generate a random rotation angle
+                        const rotationAngle = Math.random() * 360;
+
+                        // Apply the random rotation around the center of the rect
+                        group.setAttribute('transform', `rotate(${rotationAngle}, ${cx}, ${cy})`);
+                    }
+                });
+            }
+            rotateGroupElements();
             document.querySelector('.scroll-button').addEventListener('click', function() {
                 let container = document.querySelector('.container');
                 let portfolioContent = document.querySelector('.portfolio-content');
