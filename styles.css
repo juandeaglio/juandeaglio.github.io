@@ -53,6 +53,7 @@ a { text-decoration: none}
 
 .portfolio-name
 {
+    margin-top: 10vh;
     opacity: 0;
     font-weight: 1200;
     color: #212529;
@@ -70,12 +71,36 @@ a { text-decoration: none}
     margin: 0 auto;
     justify-content: center;
 }
-.url{
-    background-color: #E9F1FA;
-    width: 40px;
-    height: 40px;
+.url {
+    position: relative;
     display: inline-block;
+    height: 40px;
+    overflow: hidden;
 }
+
+.url::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #009ACD;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.url:hover::after {
+    opacity: 0.5;
+}
+
+.url img{
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 .icon-link
 {
     text-decoration: none;
@@ -128,7 +153,6 @@ a { text-decoration: none}
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     margin: 0;
-    
     background-color: #E9F1FA;
 }
 
@@ -149,7 +173,7 @@ p {
 }
 .item-header
 {
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 1200;
 }
 
@@ -233,14 +257,5 @@ p {
 }
 
 // desktop pointer media
-@media (min-width: 500px) {
-    body {
-        font-size: 12px;
-        width: 100%;
-        height: 100%;
-    }
-    .portfolio-blob
-    {
-        font-size: 12px;
-    }
+@media (min-width: 768px) {
 }
