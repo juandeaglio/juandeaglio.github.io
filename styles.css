@@ -7,6 +7,7 @@ body {
     font-weight: 500;
     line-height: 1.5;
     color: #212529;
+    background-color: #E9F1FA;
     margin: 0;
 }
 .wf-loading * {
@@ -148,7 +149,7 @@ a { text-decoration: none}
     margin-bottom: 10px;
 }
 .container {
-    width: 100%;
+    width: 100% ;
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -202,6 +203,13 @@ p {
     width: auto;
 }
 
+.gif
+{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
 .slide-in-fade-in{
     animation: fade-in 0.5s ease-out forwards;
 }
@@ -256,6 +264,30 @@ p {
     100% { transform: translate(0, 0); fill-opacity: 0.2 }
 }
 
-// desktop pointer media
 @media (min-width: 768px) {
+    body {
+        font-family: 'Montserrat';
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #E9F1FA;
+        margin: 0;
+    }
+    .slide{
+        width: 80%;
+        padding: 0 10%;
+        margin: 0 auto;
+    }
+    .icon{
+        height: 100px;
+    }
+}
+@media (min-width: 1024px) {
+    .slide{
+        width: 50%;
+        padding: 0 25%;
+        margin: 0 auto;
+    }
+
 }

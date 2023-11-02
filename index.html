@@ -201,8 +201,58 @@
                         </div>
                     </div>
                 </div>
+                <div class="slide" id="ml-agents">
+                    <div class="item-header">     
+                        <p style="margin-bottom: 0px;">
+                            Senior Capstone - ML Agents
+                        </p>
+                    </div>
+                    <span class="item-description">
+                        Worked on a Unity project in a small team, coded in C#.
+                        <br />
+                        Implemented a machine learning agent training framework. We implemented training methods, created data sets for agents to train on, and the games for the agents to train on.
+                    </span>
+                </div>
             </div>
         <script>
+            function detectDeviceHardware()
+            {
+                var slide = document.getElementById('ml-agents');
+                var img = document.createElement('img');
+                var img2 = document.createElement('img');
+                var img3 = document.createElement('img');
+                //checks for a desktop pointer
+                if (window.matchMedia("(pointer: fine)").matches) {
+                    // slide with id ml-agents
+
+                    img.src = 'Game1.gif';
+                    img2.src = 'Game2.gif';
+                    img3.src = 'Game3.gif';
+                    img.alt = 'Game 1 gif';
+                    img2.alt = 'Game 2 gif';
+                    img3.alt = 'Game 3 gif';
+                }
+                else
+                {
+                    img.src = "game1.png";
+                    img2.src = "game2.png";
+                    img3.src = "game3.png";
+                    img.alt = 'Game 1 image';
+                    img2.alt = 'Game 2 image';
+                    img3.alt = 'Game 3 image';
+                }
+                
+
+                img.classList.add('gif');
+                img2.classList.add('gif');
+                img3.classList.add('gif');
+
+                slide.appendChild(img);
+                slide.appendChild(img2);
+                slide.appendChild(img3);
+            }
+            detectDeviceHardware();
+            
             function centerRectangles() {
                 const header = document.querySelector('.portfolio-header');
                 const rectElements = document.querySelectorAll('.transparent-shape');
